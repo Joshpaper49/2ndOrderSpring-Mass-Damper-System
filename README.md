@@ -2,6 +2,8 @@
 
 This project simulates a basic spring-mass-damper system in MATLAB. The goal was to understand how a second-order system responds to a constant applied force and how parameters like mass, spring stiffness, damping, and time step affect the motion.
 
+**The m file is the visible file to Github with plot quality of life updates**
+
 ## System Overview
 
 The system includes:
