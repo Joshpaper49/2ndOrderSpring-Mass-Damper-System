@@ -1,23 +1,23 @@
 u = 1; %force
-b = 0.1 %damping constant
-k = 0.4 %spring constant
-m = 2 %mass
+b = 0.1; %damping constant
+k = 0.4; %spring constant
+m = 2; %mass
 dt = 0.02; %timestep
 position  = 0;
 velocity  = 0;
 acceleration  = 0;
 
 %calculating second-order system characteristics and settling time
-natural_freq = sqrt(k/m)
-damping_ratio = b/(2*sqrt(m*k))
-settle_time = 4/(natural_freq * damping_ratio)
+natural_freq = sqrt(k/m);
+damping_ratio = b/(2*sqrt(m*k));
+settle_time = 4/(natural_freq * damping_ratio);
 
 
 %preparing data collection
 time = 0:dt:settle_time;
-y_values = zeros(1, length(time))
-overshoot = zeros(1, length(time))
-index = 1:1:length(time)
+y_values = zeros(1, length(time));
+overshoot = zeros(1, length(time));
+index = 1:1:length(time);
 
 %equilibrium position
 equil_pos = u/k
@@ -43,11 +43,13 @@ for num = index
 end
 
 %plotting
+xlabel("time(s)");
+ylabel("position(m)")
 plot(time,y_values, "r")
 
 hold on
 
-overshoot
+overshoot;
 
 peak_indices = find(overshoot ~= 0);
 
